@@ -2,7 +2,7 @@
 body {
    padding: 0;
    margin: 0;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+   font-family: "Playwrite AU VIC Guides", serif;
    color: #333;
    background-color: #fafafa;
 }
@@ -20,7 +20,7 @@ main {
 header {
    text-align: center;
    height: 60px;
-   background-color: rgb(203, 177, 177);
+   background-color: #e8e3e3;
    padding: 0.5rem;
 }
 
@@ -29,7 +29,7 @@ aside {
    width: 200px;
    padding: 1rem;
    border: 1px solid rgb(107, 35, 35);
-   background-color: rgb(174, 209, 209);
+   background-color: #aed1d1;
    padding: 0.5rem;
 }
 
@@ -39,7 +39,7 @@ section {
    flex-grow: 1;
    overflow: auto;
    border: 1px solid rgb(32, 90, 129);
-   background-color: rgb(197, 215, 215);
+   background-color: #c5d7d7;
    padding: 0.5rem;
 }
 
@@ -47,6 +47,7 @@ section {
 footer {
    text-align: center;
    height: 40px;
-   background-color: rgb(203, 177, 177);
+   background-color: #e8e3e3;
    padding: 0.5rem;
+   font-size: 1.5rem;
 }
