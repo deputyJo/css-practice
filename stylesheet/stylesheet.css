@@ -1,53 +1,91 @@
 /* Reset */
 body {
+   font-family: "Playwrite AU VIC Guides", serif;
+   font-weight: 400;
+   font-style: normal;
    padding: 0;
    margin: 0;
-   font-family: "Playwrite AU VIC Guides", serif;
-   color: #333;
-   background-color: #fafafa;
+   background-color: rgb(235, 235, 235);
 }
 
-/* main */
+
+/* Main */
 main {
-   display: flex;
-   min-height: calc(100vh - 100px);
-   align-items: flex-start;
-   gap: 1rem;
-   padding: 0.5rem;
+   padding: 1rem;
+
 }
 
-/* header */
+/* Header */
 header {
+   padding: 1rem;
    text-align: center;
-   height: 60px;
-   background-color: #e8e3e3;
-   padding: 0.5rem;
 }
 
-/* sidebar */
-aside {
-   width: 200px;
-   padding: 1rem;
-   border: 1px solid rgb(107, 35, 35);
-   background-color: #aed1d1;
-   padding: 0.5rem;
+/* Cards */
+img {
+   height: auto;
+   width: 30rem;
+   object-fit: cover;
+   border: 0.2rem solid black;
+   box-shadow: 10px 5px 5px rgb(180, 178, 178);
+   /* Reduce max height of all the images to match the shortest image. */
+   max-height: 284.04px;
+   transition: all 1s ease;
 }
 
-/* main content */
-section {
-   padding: 1rem;
-   flex-grow: 1;
-   overflow: auto;
-   border: 1px solid rgb(32, 90, 129);
-   background-color: #c5d7d7;
-   padding: 0.5rem;
+img:hover {
+   transform: scale(1.05);
+   box-shadow: 10px 5px 5px rgb(148, 146, 146);
 }
 
-/* footer */
+img:active {
+
+   box-shadow: 10px 5px 5px rgb(192, 21, 58);
+   transform: rotate(10deg);
+
+}
+
+.card-grid {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+   gap: 1.5rem 1.5rem;
+}
+
+.card {
+   padding: 2rem;
+   justify-items: center;
+}
+
+/* Buttons */
+button:hover {
+   background-color: rgb(210, 202, 202);
+   cursor: pointer;
+}
+
+/* Footer */
 footer {
+   padding: 1rem;
    text-align: center;
-   height: 40px;
-   background-color: #e8e3e3;
-   padding: 0.5rem;
-   font-size: 1.5rem;
+   font-weight: bold;
 }
+
+/* Responsivness */
+
+@media (max-width: 1249px) {
+   .card-grid {
+      grid-template-columns: 1fr 1fr;
+   }
+
+}
+
+@media (max-width: 649px) {
+   .card-grid {
+      grid-template-columns: 1fr;
+   }
+}
+
+/* Button Design:
+
+The button should:
+Be centered below the description.
+Change background color and cursor on hover. */
