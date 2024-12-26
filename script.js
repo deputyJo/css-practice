@@ -1,41 +1,43 @@
-// const counterDisplay = document.getElementById("counter-display");
-// const increment = document.getElementById("increment");
-// const decrement = document.getElementById("decrement");
+const cardGrid = document.getElementById("card-grid");
+const likeCount = document.getElementById("like-count");
+let counter = 0;
 
-// let counter = 0;
+//Main logic
 
-// //Get the counter value from the local storage
-// const savedCounterValue = localStorage.getItem("counterValue");
+cardGrid.addEventListener("click", (event) => {
 
-// //Set the value of the current counter to the
-// //local storage saved value
-// counter = savedCounterValue;
+    //button logic
+    if (event.target.classList.contains("like-button")) {
 
-// //Display the saved counter value
-// counterDisplay.textContent = savedCounterValue;
-
-
-// increment.addEventListener("click", () => {
-//     counter++;
+        //toggle button text
+        toggleButtonText(event.target, "Like", "Liked");
+    }
+});
 
 
-// });
+//Functions
+
+//Button
+
+//toggle button text
+function toggleButtonText(target, text1, text2) {
+    target.textContent = target.textContent === text1 ? text2 : text1;
+
+    //set the element's attribute
+    setElementsAtribbute(target, "isLiked", text1, "notLiked", "liked");
+
+    //update and display the likes counter
+    updateAndDisplayLikesCounter(target, "isLiked", "notLiked");
+}
+
+//set the element's attribute
+function setElementsAtribbute(target, key, comparedValue, valueOption1, valueOption2) {
+    target.setAttribute(key, target.textContent === comparedValue ? valueOption1 : valueOption2)
+}
 
 
-// decrement.addEventListener("click", () => {
-
-//     counter--;
-
-
-
-// });
-
-// function updateCounter(incrementValue) {
-//     localStorage.setItem("counterValue", counter += incrementValue);
-//     displayCounterValue(counter += incrementValue);
-// }
-
-// function displayCounterValue() {
-//     counterDisplay.textContent = counter;
-// }
+//update and display the likes counter
+function updateAndDisplayLikesCounter(target, getValue, comparedValue) {
+    likeCount.textContent = target.getAttribute(getValue) === comparedValue ? --counter : ++counter;
+}
 

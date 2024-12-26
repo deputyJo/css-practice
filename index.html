@@ -15,24 +15,25 @@
 
 <body>
   <header>
-    <h1>Responsive Card Grid</h1>
+    <h1>Interactive Card Grid</h1>
+    <p>Total Likes: <span id="like-count">0</span></p>
   </header>
 
-  <main class="card-grid">
+  <main id="card-grid" class="card-grid">
     <div class="card">
       <img
         src="https://media.istockphoto.com/id/1381637603/photo/mountain-landscape.jpg?s=612x612&w=0&k=20&c=w64j3fW8C96CfYo3kbi386rs_sHH_6BGe8lAAAFS-y4="
         alt="Card Image">
       <h2>Card Title</h2>
       <p>Card description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <button>Learn More</button>
+      <button class="like-button">Like</button>
     </div>
     <div class="card">
       <img src="https://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
         alt="Card Image">
       <h2>Card Title</h2>
       <p>Card description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <button>Learn More</button>
+      <button class="like-button">Like</button>
     </div>
     <div class="card">
       <img
@@ -40,13 +41,14 @@
         alt="Card Image">
       <h2>Card Title</h2>
       <p>Card description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-      <button>Learn More</button>
+      <button class="like-button">Like</button>
     </div>
   </main>
 
   <footer>
     <p>&copy; 2024 Your Name</p>
   </footer>
+  <script src="script.js"></script>
 </body>
 
 </html>
