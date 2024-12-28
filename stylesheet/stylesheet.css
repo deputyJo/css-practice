@@ -87,6 +87,16 @@ button:hover {
    transition: background-color 0.3s;
 }
 
+.like-button:active {
+   transform: scale(0.95);
+   transition: transform 0.1s;
+}
+
+#like-count {
+   font-weight: bold;
+   color: #333;
+}
+
 /* Footer */
 footer {
    padding: 1rem;
