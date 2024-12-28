@@ -1,43 +1,20 @@
-const cardGrid = document.getElementById("card-grid");
-const likeCount = document.getElementById("like-count");
-let counter = 0;
+const likeCountDisplay = document.getElementById("like-count");
+const likeButton = document.querySelectorAll(".like-button");
+let totalLikes = 0;
 
-//Main logic
 
-cardGrid.addEventListener("click", (event) => {
+likeButton.forEach(button => {
+    button.addEventListener("click", () => {
+        let isLiked = button.classList.toggle("liked");
 
-    //button logic
-    if (event.target.classList.contains("like-button")) {
+        button.setAttribute("aria-pressed", isLiked);
 
-        //toggle button text
-        toggleButtonText(event.target, "Like", "Liked");
-    }
+        button.textContent = isLiked ? "Liked" : "Like";
+
+        totalLikes = Math.max(0, totalLikes + (isLiked ? 1 : -1));
+
+        likeCountDisplay.textContent = totalLikes;
+
+    });
 });
-
-
-//Functions
-
-//Button
-
-//toggle button text
-function toggleButtonText(target, text1, text2) {
-    target.textContent = target.textContent === text1 ? text2 : text1;
-
-    //set the element's attribute
-    setElementsAtribbute(target, "isLiked", text1, "notLiked", "liked");
-
-    //update and display the likes counter
-    updateAndDisplayLikesCounter(target, "isLiked", "notLiked");
-}
-
-//set the element's attribute
-function setElementsAtribbute(target, key, comparedValue, valueOption1, valueOption2) {
-    target.setAttribute(key, target.textContent === comparedValue ? valueOption1 : valueOption2)
-}
-
-
-//update and display the likes counter
-function updateAndDisplayLikesCounter(target, getValue, comparedValue) {
-    likeCount.textContent = target.getAttribute(getValue) === comparedValue ? --counter : ++counter;
-}
 
